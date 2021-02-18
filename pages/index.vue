@@ -3,25 +3,14 @@
     <div>
       <Logo />
       <h1 class="title">
-        nuxt-code1
+        nuxt-code
       </h1>
       <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
+        <nuxt-link class="button--green" to="/user/admin">会员中心</nuxt-link>
+        <nuxt-link class="button--grey" to="/user/1">路由id=1</nuxt-link>
+        <nuxt-link class="button--grey" to="/user/2">路由id=2</nuxt-link>
+        <nuxt-link class="button--grey" to="/3">路由test=3</nuxt-link>
+        <nuxt-link class="button--grey" to="/4/comments?id=4">路由comments=4</nuxt-link>
       </div>
     </div>
   </div>
@@ -65,9 +54,5 @@ export default {}
   color: #526488;
   word-spacing: 5px;
   padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
 }
 </style>

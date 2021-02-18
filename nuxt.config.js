@@ -16,6 +16,7 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
+  // 配置全局样式表
   css: [
     'element-ui/lib/theme-chalk/index.css'
   ],
