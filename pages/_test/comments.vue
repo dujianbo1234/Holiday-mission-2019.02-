@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  layout: "style",
+  layout: "topBar",
   data() {
     return {
       title: "_test/comments.vue"

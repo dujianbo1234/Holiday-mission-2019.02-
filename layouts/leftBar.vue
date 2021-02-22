@@ -1,6 +1,6 @@
 <template>
   <div class="style">
-    <div class="header">
+    <div class="left">
       <h1>公共头部</h1>
     </div>
     <div class="main">
@@ -17,11 +17,11 @@
 export default {};
 </script>
 
-<style lang="less">
+<style scoped lang="less">
 .style {
   width: 100%;
   height: 100%;
-  .header {
+  .left {
     text-align: center;
     height: 10%;
     background: pink;

@@ -9,8 +9,10 @@
         <nuxt-link class="button--green" to="/user/admin">会员中心</nuxt-link>
         <nuxt-link class="button--grey" to="/user/1">路由id=1</nuxt-link>
         <nuxt-link class="button--grey" to="/user/2">路由id=2</nuxt-link>
-        <nuxt-link class="button--grey" to="/3">路由test=3</nuxt-link>
-        <nuxt-link class="button--grey" to="/4/comments?id=666">路由comments=4</nuxt-link>
+        <nuxt-link class="button--grey" to="/0">路由test=3</nuxt-link>
+        <nuxt-link class="button--grey" to="/123/comments?id=666">路由comments=4</nuxt-link>
+        <nuxt-link class="button--grey" to="/father">路由嵌套</nuxt-link>
+        <el-button class="button--grey">发送请求</el-button>
       </div>
     </div>
   </div>
