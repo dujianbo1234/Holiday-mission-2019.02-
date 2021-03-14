@@ -1,66 +1,18 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        {{title}}
-      </h1>
-      <div class="links">
-        <nuxt-link class="button--green" to="/user/admin">会员中心</nuxt-link>
-        <nuxt-link class="button--grey" to="/user/1">路由id=1</nuxt-link>
-        <nuxt-link class="button--grey" to="/user/2">路由id=2</nuxt-link>
-        <nuxt-link class="button--grey" to="/0">路由test=3</nuxt-link>
-        <nuxt-link class="button--grey" to="/123/comments?id=666">路由comments=4</nuxt-link>
-        <nuxt-link class="button--grey" to="/father">路由嵌套</nuxt-link>
-        <el-button class="button--grey">发送请求</el-button>
-      </div>
-    </div>
-  </div>
+  <section class="container">
+    <img src="../assets/img/logo.png" alt="Nuxt.js Logo" class="logo" />
+    <h1 class="title">
+      Universal Vue.js Application Framework
+    </h1>
+    <nuxt-link class="button" to="/about">
+      About page
+    </nuxt-link>
+  </section>
 </template>
 
-<script>
-export default {
-  data () {
-    return {
-      title: 'nuxt-code'
-    }
-  }
-}
-</script>
-
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
+<style scoped>
+.title
+{
+  margin: 50px 0;
 }
 </style>

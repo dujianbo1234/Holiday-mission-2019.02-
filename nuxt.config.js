@@ -1,44 +1,46 @@
-export default {
-  // Global page headers: https://go.nuxtjs.dev/config-head
+module.exports = {
+  /*
+  ** Headers of the page
+  */
   head: {
-    title: 'nuxt-code',
-    htmlAttrs: {
-      lang: 'en'
-    },
+    title: 'starter',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      { hid: 'description', name: 'description', content: 'Nuxt.js project' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
-
-  // Global CSS: https://go.nuxtjs.dev/config-css
-  // 配置全局样式表
-  css: [
-    'element-ui/lib/theme-chalk/index.css'
-  ],
-
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-    '@/plugins/element-ui'
-  ],
-
-  // Auto import components: https://go.nuxtjs.dev/config-components
-  components: true,
-
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [
-  ],
-
-  // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-  ],
-
-  // Build Configuration: https://go.nuxtjs.dev/config-build
+  /*
+  ** Global CSS
+  */
+  css: ['~assets/css/main.css'],
+  /*
+  ** Customize the progress-bar color
+  */
+  loading: { color: '#3B8070' },
+  /*
+   ** Build configuration
+   */
   build: {
-    transpile: [/^element-ui/],
-  }
+    /*
+     ** Run ESLINT on save
+     */
+    extend (config, ctx) {
+      if (ctx.Client) {
+        config.module.rules.push({
+          enforce: 'pre',
+          test: /\.(js|vue)$/,
+          loader: 'eslint-loader',
+          exclude: /(node_modules)/
+        })
+      }
+    }
+  },
+  /*
+   ** 关闭nuxt的乞讨声明
+   */
+  telemetry: false
 }
