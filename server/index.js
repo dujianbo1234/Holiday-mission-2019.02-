@@ -5,12 +5,12 @@ import {
 } from 'nuxt'
 
 // 引入新建接口路由
-import koaRouter from './routers/api'
+import api from './routers/api'
 
 const app = new Koa()
 
 // 启动koa-router
-app.use(koaRouter.routes()).use(koaRouter.allowedMethods())
+app.use(api.routes()).use(api.allowedMethods())
 
 async function start() {
   const host = process.env.HOST || '127.0.0.1'
