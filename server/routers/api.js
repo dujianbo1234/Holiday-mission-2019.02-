@@ -27,7 +27,7 @@ router.get('/list', async (ctx) => {
 })
 
 /* 动态路由 */
-router.get('/home/:id', async (ctx) => {
+router.get('/home/:id/:pkid', async (ctx) => {
   ctx.body = `动态路由传值`
   // ctx.params 获取动态路由传值
   console.log(ctx.params)
