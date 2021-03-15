@@ -1,8 +1,18 @@
 import Koa from 'koa'
-import { Nuxt, Builder } from 'nuxt'
+import {
+  Nuxt,
+  Builder
+} from 'nuxt'
 
-async function start () {
-  const app = new Koa()
+// 引入新建接口路由
+import koaRouter from './routers/api'
+
+const app = new Koa()
+
+// 启动koa-router
+app.use(koaRouter.routes()).use(koaRouter.allowedMethods())
+
+async function start() {
   const host = process.env.HOST || '127.0.0.1'
   const port = process.env.PORT || 3000
 
