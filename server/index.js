@@ -60,13 +60,36 @@ app.use(bodyParser)
 //   }
 // })
 
-/* 第三方中间件 koa-bodyparser 获取 post请求 */
-router.post('/login', async(ctx, next) => {
-  ctx.body = ctx.request.body // 获取表单提交的数据
-  next()
-})
+/* 
+  第三方中间件 
+  用post请求处理URL时，我们会遇到一个问题：post请求通常会发送一个表单，或者JSON，
+  它作为request的body发送，但无论是Node.js提供的原始request对象，还是koa提供的request对象，都不提供解析request的body的功能,
+  koa-bodyparser解析原始request请求,把解析后的参数，绑定到ctx.request.body中
+*/
+router.get('/admin', async (ctx, next) => {
+  ctx.response.body = `<h1>Index</h1>
+      <form action="/signin" method="post">
+          <p>Name: <input name="name" value="koa"></p>
+          <p>Password: <input name="password" type="password"></p>
+          <p><input type="submit" value="Submit"></p>
+      </form>`;
+});
 
-// 启动koa-router
+router.post('/signin', async (ctx, next) => {
+  var
+    name = ctx.request.body.name || '',
+    password = ctx.request.body.password || '';
+  console.log(`signin with name: ${name}, password: ${password}`);
+  if (name === 'koa' && password === '12345') {
+    ctx.response.body = `<h1>Welcome, ${name}!</h1>`;
+  } else {
+    ctx.response.body = `<h1>Login failed!</h1>
+      <p><a href="/">Try again</a></p>`;
+  }
+});
+/* 类似的，put、delete、head请求也可以由router处理 */
+
+/* 启动koa-router allowedMethods()是当所有路由中间件执行完成之后,若ctx.status为空或者404的时候,丰富response对象的header头. */
 app.use(api.routes()).use(api.allowedMethods())
 
 async function start() {
